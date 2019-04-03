@@ -1,0 +1,36 @@
+import groovy.io.FileType
+
+def listOfUpdatedFiles = []
+def changesDir = new File("D:\\Playground\\GroovyTest\\changes")
+changesDir.eachFileRecurse(FileType.FILES) { file ->
+    listOfUpdatedFiles << file
+}
+
+//listOfUpdatedFiles.each {println it.path}
+
+def map = listOfUpdatedFiles.groupBy { it.name.substring(it.name.indexOf("_") + 1) }
+
+def map2 = map.collectEntries { [(it.key): it.value.max { it }] }
+
+
+map2.each { fName, fPath ->
+// println "${k}:${v}"
+//    println "-----"
+    def fileToUpdate = listOfUpdatedFiles.find { it.path == "${fPath}" }
+    if (fileToUpdate == fPath) {
+
+        //find original file
+        File originalFile = new File("D:\\Playground\\GroovyTest\\original\\" + fName)
+        if (originalFile.exists()) {
+            //compare contents
+            if (originalFile.text.contentEquals(fileToUpdate.text)) {
+                println fName + " -------> ok "
+            } else {
+                println fName + " -------> CONTENT NOT THE SAME"
+            }
+        } else {
+            println fName + " -------> FILE NOT EXISTS"
+        }
+
+    }
+} ​
