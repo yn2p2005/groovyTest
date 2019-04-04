@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(5, auto);
+      grid-gap:1px;
+      background-color: #2196F3;
+      padding: 1px;
+    }
+
+    .grid-container > div {
+      background-color: rgba(255, 255, 255, 0.8);
+      text-align: center;
+      padding: 8px 0;
+      font-size: 13px;
+    }
+
+    .grid-container > .header {
+         background-color: cyan;
+    }
+
+    .grid-container > .datarow:nth-child(10n+6),
+    .grid-container > .datarow:nth-child(10n+7),
+    .grid-container > .datarow:nth-child(10n+8),
+    .grid-container > .datarow:nth-child(10n+9),
+    .grid-container > .datarow:nth-child(10n+10)
+    {
+        background-color: #fff;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>The grid Property</h1>
+
+<p>The grid is a shorthand property for all grid container properties.</p>
+
+<p>This grid layout has three columns, and the first row is 150px high:</p>
+
+<div class="grid-container">
+
+    <div class="header">1</div>
+    <div class="header">2</div>
+    <div class="header">3</div>
+    <div class="header">4</div>
+    <div class="header">5</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+    <div class="datarow">5</div>
+    <div class="datarow">6</div>
+</div>
+
+</body>
+</html>
